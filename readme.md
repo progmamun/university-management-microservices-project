@@ -5,5 +5,10 @@
 - tsc --init
 - `yarn add -D @types/express @types/cors`
 - `yarn add ts-node-dev --dev`
-- `yarn add eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev`
+- `yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin`
 - `yarn add -D prettier`
+- `yarn add -D eslint-config-prettier`
+- `yarn add husky --dev`
+- `yarn husky install`
+- `yarn husky add .husky/pre-commit "npm test"`
+- `yarn add -D lint-staged`
