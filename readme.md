@@ -17,3 +17,4 @@
 
 - `yarn add winston`
 - `yarn add winston-daily-rotate-file`
+- `yarn add zod`
