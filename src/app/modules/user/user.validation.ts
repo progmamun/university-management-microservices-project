@@ -8,7 +8,6 @@ const createUserZodSchema = z.object({
     password: z.string().optional(),
   }),
 });
-// await createUserZodSchema.parseAsync(req)
 
 export const UserValidation = {
   createUserZodSchema,
