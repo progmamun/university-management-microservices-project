@@ -24,6 +24,11 @@
             "date": 1686141526919,
             "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-07-06-18-error.log",
             "hash": "2902a2b47032d7dbdddf6d047bd1b94ca9deb1dfb0c98a413e0428c4b959c399"
+        },
+        {
+            "date": 1686155370277,
+            "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-07-06-22-error.log",
+            "hash": "e0f52cd7bd149f5b3b1aa8f31ea15467c2a923e24b3dd689a4485fb5d664855d"
         }
     ],
     "hashType": "sha256"
