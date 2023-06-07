@@ -9,7 +9,7 @@ const createSemester: RequestHandler = async (req, res, next) => {
     );
     res.status(200).json({
       success: true,
-      message: 'Created user successfully',
+      message: 'Academic Semester create successfully',
       data: result,
     });
   } catch (error) {
