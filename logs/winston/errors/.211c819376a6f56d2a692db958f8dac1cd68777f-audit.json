@@ -1,40 +1,40 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "/home/mamun/vs-code/university-management/logs/winston/errors/.211c819376a6f56d2a692db958f8dac1cd68777f-audit.json",
+  "files": [
+    {
+      "date": 1685709479150,
+      "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-02-06-18-error.log",
+      "hash": "247c2bba243cd0a4d848f90b8e9677de302e2a2bd79e89fc7c4152a582f20b3c"
     },
-    "auditLog": "/home/mamun/vs-code/university-management/logs/winston/errors/.211c819376a6f56d2a692db958f8dac1cd68777f-audit.json",
-    "files": [
-        {
-            "date": 1685709479150,
-            "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-02-06-18-error.log",
-            "hash": "247c2bba243cd0a4d848f90b8e9677de302e2a2bd79e89fc7c4152a582f20b3c"
-        },
-        {
-            "date": 1686050535114,
-            "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-06-06-17-error.log",
-            "hash": "9fad636866380b5c1626421fb9f884f055c6eae41c4abf41e2bed4b3c08d8a55"
-        },
-        {
-            "date": 1686134804307,
-            "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-07-06-16-error.log",
-            "hash": "8e4c2fee73b4f17bc73a7dca6fb3efb0d93f10f573e93b648d4d5e15c38d1fd4"
-        },
-        {
-            "date": 1686141526919,
-            "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-07-06-18-error.log",
-            "hash": "2902a2b47032d7dbdddf6d047bd1b94ca9deb1dfb0c98a413e0428c4b959c399"
-        },
-        {
-            "date": 1686155370277,
-            "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-07-06-22-error.log",
-            "hash": "e0f52cd7bd149f5b3b1aa8f31ea15467c2a923e24b3dd689a4485fb5d664855d"
-        },
-        {
-            "date": 1686299327979,
-            "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-09-06-14-error.log",
-            "hash": "8e5e7aa3e6de8e689622bfd72762eaac420e92dc2fe2df7b9588f9ef5c036d39"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1686050535114,
+      "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-06-06-17-error.log",
+      "hash": "9fad636866380b5c1626421fb9f884f055c6eae41c4abf41e2bed4b3c08d8a55"
+    },
+    {
+      "date": 1686134804307,
+      "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-07-06-16-error.log",
+      "hash": "8e4c2fee73b4f17bc73a7dca6fb3efb0d93f10f573e93b648d4d5e15c38d1fd4"
+    },
+    {
+      "date": 1686141526919,
+      "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-07-06-18-error.log",
+      "hash": "2902a2b47032d7dbdddf6d047bd1b94ca9deb1dfb0c98a413e0428c4b959c399"
+    },
+    {
+      "date": 1686155370277,
+      "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-07-06-22-error.log",
+      "hash": "e0f52cd7bd149f5b3b1aa8f31ea15467c2a923e24b3dd689a4485fb5d664855d"
+    },
+    {
+      "date": 1686299327979,
+      "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-09-06-14-error.log",
+      "hash": "8e5e7aa3e6de8e689622bfd72762eaac420e92dc2fe2df7b9588f9ef5c036d39"
+    }
+  ],
+  "hashType": "sha256"
 }
