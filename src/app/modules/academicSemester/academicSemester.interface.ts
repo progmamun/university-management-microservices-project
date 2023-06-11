@@ -35,3 +35,7 @@ export const academicSemesterTitleCodeMapper: {
 };
 
 export type AcademicSemesterModel = Model<IAcademicSemester>;
+
+export type IAcademicSemesterFilters = {
+  searchTerm: string;
+};

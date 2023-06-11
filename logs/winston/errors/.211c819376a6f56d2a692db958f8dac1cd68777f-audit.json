@@ -34,6 +34,16 @@
             "date": 1686299327979,
             "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-09-06-14-error.log",
             "hash": "8e5e7aa3e6de8e689622bfd72762eaac420e92dc2fe2df7b9588f9ef5c036d39"
+        },
+        {
+            "date": 1686407789865,
+            "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-10-06-20-error.log",
+            "hash": "aaee3fb4dccb52d1a721d4b44aa1bd0914b852dc7e6b68f465df5b6c6be97fea"
+        },
+        {
+            "date": 1686451866919,
+            "name": "/home/mamun/vs-code/university-management/logs/winston/errors/um-2023-11-06-08-error.log",
+            "hash": "79b8675e27e3da9f2fb7815ce70143f6e5349404578bd4d6d1b30d62e4c793ef"
         }
     ],
     "hashType": "sha256"
