@@ -10,7 +10,7 @@ const AcademicFacultySchema = new Schema<
 >(
   {
     title: {
-      String,
+      type: String,
       required: true,
       unique: true,
     },
