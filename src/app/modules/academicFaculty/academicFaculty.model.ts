@@ -1,0 +1,29 @@
+import { Schema, model } from 'mongoose';
+import {
+  IAcademicFaculty,
+  IAcademicFacultyModel,
+} from './academicFaculty.interface';
+
+const AcademicFacultySchema = new Schema<
+  IAcademicFaculty,
+  IAcademicFacultyModel
+>(
+  {
+    title: {
+      String,
+      required: true,
+      unique: true,
+    },
+  },
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
+  }
+);
+
+export const AcademicFaculty = model<IAcademicFaculty, IAcademicFacultyModel>(
+  'AcademicFaculty',
+  AcademicFacultySchema
+);
