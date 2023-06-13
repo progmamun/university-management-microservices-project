@@ -26,14 +26,6 @@ export type IAcademicSemester = {
   endMonth: IAcademicSemesterMonths;
 };
 
-export const academicSemesterTitleCodeMapper: {
-  [key: string]: string;
-} = {
-  Autumn: '01',
-  Summer: '02',
-  Fall: '03',
-};
-
 export type AcademicSemesterModel = Model<IAcademicSemester>;
 
 export type IAcademicSemesterFilters = {
