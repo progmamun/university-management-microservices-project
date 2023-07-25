@@ -1,31 +1,39 @@
 import { SortOrder } from 'mongoose';
-import { PaginationHelpers } from '../../../helpers/paginationHelper';
+import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import { academicFacultySearchableFields } from './academicFaculty.constants';
 import {
   IAcademicFaculty,
   IAcademicFacultyFilters,
-} from './academicFaculty.interface';
+} from './academicFaculty.interfaces';
 import { AcademicFaculty } from './academicFaculty.model';
 
-const createFaculty = async (
-  payload: IAcademicFaculty
-): Promise<IAcademicFaculty | null> => {
+const createFaculty = async (payload: IAcademicFaculty) => {
   const result = await AcademicFaculty.create(payload);
   return result;
 };
 
-const getAllFaculty = async (
+const getSingleFaculty = async (
+  id: string
+): Promise<IAcademicFaculty | null> => {
+  const result = await AcademicFaculty.findById(id);
+  return result;
+};
+
+const getAllFaculties = async (
   filters: IAcademicFacultyFilters,
   paginationOptions: IPaginationOptions
 ): Promise<IGenericResponse<IAcademicFaculty[]>> => {
+  // Extract searchTerm to implement search query
   const { searchTerm, ...filtersData } = filters;
+
   const { page, limit, skip, sortBy, sortOrder } =
-    PaginationHelpers.calculatePagination(paginationOptions);
+    paginationHelpers.calculatePagination(paginationOptions);
 
   const andConditions = [];
 
+  // Search needs $or for searching in specified fields
   if (searchTerm) {
     andConditions.push({
       $or: academicFacultySearchableFields.map(field => ({
@@ -37,6 +45,7 @@ const getAllFaculty = async (
     });
   }
 
+  // Filters needs $and to fullfill all the conditions
   if (Object.keys(filtersData).length) {
     andConditions.push({
       $and: Object.entries(filtersData).map(([field, value]) => ({
@@ -45,12 +54,13 @@ const getAllFaculty = async (
     });
   }
 
+  // Dynamic sort needs  fields to  do sorting
   const sortConditions: { [key: string]: SortOrder } = {};
-
   if (sortBy && sortOrder) {
     sortConditions[sortBy] = sortOrder;
   }
 
+  // If there is no condition , put {} to give all data
   const whereConditions =
     andConditions.length > 0 ? { $and: andConditions } : {};
 
@@ -59,7 +69,7 @@ const getAllFaculty = async (
     .skip(skip)
     .limit(limit);
 
-  const total = await AcademicFaculty.countDocuments();
+  const total = await AcademicFaculty.countDocuments(whereConditions);
 
   return {
     meta: {
@@ -69,13 +79,6 @@ const getAllFaculty = async (
     },
     data: result,
   };
-};
-
-const getSingleFaculty = async (
-  id: string
-): Promise<IAcademicFaculty | null> => {
-  const result = await AcademicFaculty.findById(id);
-  return result;
 };
 
 const updateFaculty = async (
@@ -88,15 +91,17 @@ const updateFaculty = async (
   return result;
 };
 
-const deleteFaculty = async (id: string): Promise<IAcademicFaculty | null> => {
+const deleteByIdFromDB = async (
+  id: string
+): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.findByIdAndDelete(id);
   return result;
 };
 
 export const AcademicFacultyService = {
-  getAllFaculty,
   createFaculty,
+  getAllFaculties,
   getSingleFaculty,
   updateFaculty,
-  deleteFaculty,
+  deleteByIdFromDB,
 };
