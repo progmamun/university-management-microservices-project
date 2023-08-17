@@ -1,47 +1,64 @@
 import { z } from 'zod';
-import { bloodGroup, gender } from '../student/student.constant';
 
-const updateStudentZodSchema = z.object({
-  body: z.object({
-    name: z.object({
-      firstName: z.string().optional(),
-      lastName: z.string().optional(),
-      middleName: z.string().optional(),
-    }),
-    gender: z.enum([...gender] as [string, ...string[]]).optional(),
-    dateOfBirth: z.string().optional(),
-    email: z.string().email().optional(),
-    contactNo: z.string().optional(),
-    emergencyContactNo: z.string().optional(),
-    bloodGroup: z.enum([...bloodGroup] as [string, ...string[]]).optional(),
-    presentAddress: z.string().optional(),
-    permanentAddress: z.string().optional(),
-    academicSemester: z.string().optional(),
-    academicDepartment: z.string().optional(),
-    academicFaculty: z.string().optional(),
-    guardian: z
-      .object({
-        fatherName: z.string().optional(),
-        fatherOccupation: z.string().optional(),
-        fatherContactNo: z.string().optional(),
-        motherName: z.string().optional(),
-        motherOccupation: z.string().optional(),
-        motherContactNo: z.string().optional(),
-        address: z.string().optional(),
-      })
-      .optional(),
-    localGuardian: z
-      .object({
-        name: z.string().optional(),
-        occupation: z.string().optional(),
+const create = z.object({
+    body: z.object({
+        studentId: z.string({
+            required_error: 'Student id is required'
+        }),
+        firstName: z.string({
+            required_error: 'First name is required'
+        }),
+        lastName: z.string({
+            required_error: 'Last name is required'
+        }),
+        middleName: z.string({
+            required_error: 'Middle name is required'
+        }),
+        profileImage: z.string({
+            required_error: 'Profile image is required'
+        }),
+        email: z.string({
+            required_error: 'Email is required'
+        }),
+        contactNo: z.string({
+            required_error: 'Contact no is required'
+        }),
+        gender: z.string({
+            required_error: 'Gender is required'
+        }),
+        bloodGroup: z.string({
+            required_error: 'Blood group is required'
+        }),
+        academicSemesterId: z.string({
+            required_error: 'Academic semester is required'
+        }),
+        academicDepartmentId: z.string({
+            required_error: 'Academic department is required'
+        }),
+        academicFacultyId: z.string({
+            required_error: 'Academic faculty is required'
+        })
+    })
+});
+
+const update = z.object({
+    body: z.object({
+        studentId: z.string().optional(),
+        firstName: z.string().optional(),
+        lastName: z.string().optional(),
+        middleName: z.string().optional(),
+        profileImage: z.string().optional(),
+        email: z.string().optional(),
         contactNo: z.string().optional(),
-        address: z.string().optional(),
-      })
-      .optional(),
-    profileImage: z.string().optional(),
-  }),
+        gender: z.string().optional(),
+        bloodGroup: z.string().optional(),
+        academicSemesterId: z.string().optional(),
+        academicDepartmentId: z.string().optional(),
+        academicFacultyId: z.string().optional()
+    })
 });
 
 export const StudentValidation = {
-  updateStudentZodSchema,
+    create,
+    update
 };
