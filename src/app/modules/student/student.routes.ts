@@ -10,9 +10,11 @@ router.get('/', StudentController.getAllFromDB);
 router.get('/:id', StudentController.getByIdFromDB);
 
 router.post(
-    '/',
-    validateRequest(StudentValidation.create),
-    StudentController.insertIntoDB
+  '/',
+  validateRequest(StudentValidation.create),
+  StudentController.insertIntoDB
 );
+
+router.patch('/:id', StudentController.updateIntoDB);
 
 export const studentRoutes = router;
