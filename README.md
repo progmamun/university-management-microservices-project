@@ -3,6 +3,7 @@
 ### Prisma cmd
 
 - `npx prisma migrate dev --name init`
+- `crypto.randomBytes(64).toString('hex')`
 
 ### ER Diagram
 
