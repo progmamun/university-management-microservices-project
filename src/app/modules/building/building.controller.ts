@@ -3,27 +3,28 @@ import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
 import pick from '../../../shared/pick';
 import sendResponse from '../../../shared/sendResponse';
-import { studentFilterableFields } from './student.constants';
-import { StudentService } from './student.service';
+import { buildingFilterableFields } from './building.constants';
+import { BuildingService } from './building.service';
 
 const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
-  const result = await StudentService.insertIntoDB(req.body);
+  const result = await BuildingService.insertIntoDB(req.body);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Student created successfully',
+    message: 'Building created successfully!',
     data: result,
   });
 });
 
 const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
-  const filters = pick(req.query, studentFilterableFields);
+  console.log(req.query);
+  const filters = pick(req.query, buildingFilterableFields);
   const options = pick(req.query, ['limit', 'page', 'sortBy', 'sortOrder']);
-  const result = await StudentService.getAllFromDB(filters, options);
+  const result = await BuildingService.getAllFromDB(filters, options);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Students fetched successfully',
+    message: 'Building fetched successfully!',
     meta: result.meta,
     data: result.data,
   });
@@ -31,42 +32,41 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
 
 const getByIdFromDB = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await StudentService.getByIdFromDB(id);
+  const result = await BuildingService.getByIdFromDB(id);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Student fetched successfully',
+    message: 'Building fetched successfully',
     data: result,
   });
 });
 
-const updateIntoDB = catchAsync(async (req: Request, res: Response) => {
+const updateOneInDB = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const payload = req.body;
-  const result = await StudentService.updateIntoDB(id, payload);
+  const result = await BuildingService.updateOneInDB(id, req.body);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Student updated successfully',
+    message: 'Building updated successfully',
     data: result,
   });
 });
 
-const deleteFromDB = catchAsync(async (req: Request, res: Response) => {
+const deleteByIdFromDB = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await StudentService.deleteFromDB(id);
+  const result = await BuildingService.deleteByIdFromDB(id);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Student deleted successfully',
+    message: 'Building delete successfully',
     data: result,
   });
 });
 
-export const StudentController = {
+export const BuildingController = {
   insertIntoDB,
   getAllFromDB,
   getByIdFromDB,
-  updateIntoDB,
-  deleteFromDB,
+  updateOneInDB,
+  deleteByIdFromDB,
 };
