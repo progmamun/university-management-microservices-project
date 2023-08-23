@@ -3,7 +3,9 @@ import { academicDepartmentRoutes } from '../modules/academicDepartment/academic
 import { academicFacultyRoutes } from '../modules/academicFaculty/academicFaculty.routes';
 import { AcademicSemeterRoutes } from '../modules/academicSemester/academicSemester.routes';
 import { buildingRoutes } from '../modules/building/building.routes';
+import { courseRoutes } from '../modules/course/course.routes';
 import { facultyRoutes } from '../modules/faculty/faculty.routes';
+import { roomRoutes } from '../modules/room/room.routes';
 import { studentRoutes } from '../modules/student/student.routes';
 
 const router = express.Router();
@@ -11,29 +13,37 @@ const router = express.Router();
 const moduleRoutes = [
   // ... routes
   {
-    path: '/academic-semesters',
-    route: AcademicSemeterRoutes,
+    path: "/academic-semesters",
+    route: AcademicSemeterRoutes
   },
   {
     path: '/academic-faculties',
-    route: academicFacultyRoutes,
+    route: academicFacultyRoutes
   },
   {
     path: '/academic-departments',
-    route: academicDepartmentRoutes,
+    route: academicDepartmentRoutes
   },
   {
     path: '/faculties',
-    route: facultyRoutes,
+    route: facultyRoutes
   },
   {
     path: '/students',
-    route: studentRoutes,
+    route: studentRoutes
   },
   {
     path: '/buildings',
-    route: buildingRoutes,
+    route: buildingRoutes
   },
+  {
+    path: '/rooms',
+    route: roomRoutes
+  },
+  {
+    path: '/courses',
+    route: courseRoutes
+  }
 ];
 
 moduleRoutes.forEach(route => router.use(route.path, route.route));
