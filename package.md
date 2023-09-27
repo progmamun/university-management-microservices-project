@@ -1,3 +1,0 @@
-- `npx prisma migrate dev`
-- `npx prisma generate`
-- `yarn upgrade typescript --latest`| yarn upgrade --latest
