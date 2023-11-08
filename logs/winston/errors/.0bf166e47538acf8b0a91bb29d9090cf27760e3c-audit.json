@@ -6,14 +6,19 @@
     "auditLog": "/home/mamun/vs-code/um-project-final-part/um-core-service/logs/winston/errors/.0bf166e47538acf8b0a91bb29d9090cf27760e3c-audit.json",
     "files": [
         {
-            "date": 1694931615818,
-            "name": "/home/mamun/vs-code/um-project-final-part/um-core-service/logs/winston/errors/phu-2023-17-09-12-error.log",
-            "hash": "a5d1d74e6f6f1fd14b78cdbf363653f228fa12d5108717c92bd11a5fbfd5bc3d"
-        },
-        {
             "date": 1695796974849,
             "name": "/home/mamun/vs-code/um-project-final-part/um-core-service/logs/winston/errors/phu-2023-27-09-12-error.log",
             "hash": "da07727aca0cd5247e0512335b24cf5b8453859cccae6f705d4deb469e8f3f8a"
+        },
+        {
+            "date": 1696248713911,
+            "name": "/home/mamun/vs-code/um-project-final-part/um-core-service/logs/winston/errors/phu-2023-02-10-18-error.log",
+            "hash": "59ea573732c261247a5a6009fbad3ccbbb50e0762ced831660bf721cca4b848b"
+        },
+        {
+            "date": 1696830437321,
+            "name": "/home/mamun/vs-code/um-project-final-part/um-core-service/logs/winston/errors/phu-2023-09-10-11-error.log",
+            "hash": "8ad0d844a0c9f0643b1dfa30f7d5fa94e33c1f05319b56d69caf0042a3d1e653"
         }
     ],
     "hashType": "sha256"
